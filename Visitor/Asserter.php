@@ -72,7 +72,7 @@ class Asserter implements Visitor\Visit
      *
      * @param   \Hoa\Ruler\Context  $context    Context.
      */
-    public function __construct(Ruler\Context $context = null)
+    public function __construct(?Ruler\Context $context = null)
     {
         if (null !== $context) {
             $this->setContext($context);
