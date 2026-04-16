@@ -89,7 +89,7 @@ class Ruler
      * @return  bool
      * @throws  \Hoa\Ruler\Exception
      */
-    public function assert($rule, Context $context = null)
+    public function assert($rule, ?Context $context = null)
     {
         if (is_string($rule)) {
             $rule = static::interpret($rule);
@@ -150,7 +150,7 @@ class Ruler
      * @param   \Hoa\Ruler\Context  $context    Context.
      * @return  \Hoa\Visitor\Visit
      */
-    public function getAsserter(Context $context = null)
+    public function getAsserter(?Context $context = null)
     {
         if (null === $asserter = $this->_asserter) {
             return static::getDefaultAsserter($context);
@@ -169,7 +169,7 @@ class Ruler
      * @param   \Hoa\Ruler\Context    $context    Context.
      * @return  \Hoa\Ruler\Visitor\Asserter
      */
-    public static function getDefaultAsserter(Context $context = null)
+    public static function getDefaultAsserter(?Context $context = null)
     {
         if (null === static::$_defaultAsserter) {
             static::$_defaultAsserter = new Visitor\Asserter($context);
